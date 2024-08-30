@@ -83,7 +83,7 @@ class DataCollect:
     
     def get_spx_rtn(self) -> pd.DataFrame:
         
-        spx_path = os.path.join(self.data_path, "SPX.parquet")
+        spx_path = os.path.join(self.data_path, "Indices.parquet")
         
         try:
             
@@ -94,7 +94,7 @@ class DataCollect:
             
             print("collecting data")
             df = (yf.download(
-                tickers = ["^GSPC"],
+                tickers = ["SPY", "AGG", "TLT"],
                 start = self.start_date,
                 end = self.end_date))
             
